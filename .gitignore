@@ -1,6 +1,8 @@
 Created by https://www.gitignore.io/api/java
 
 ### Java ###
+# vim files
+*.swp
 # Compiled class file
 *.class
 
