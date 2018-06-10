@@ -1,0 +1,76 @@
+Algorithms
+
+
+Asymptotic Notation
+
+Big O
+- g(n) = O(f(n)) -> C * f(n) -> upper bound on g(n) (>=)
+- greater than or equal to for some constant C
+Big omega
+- g(n) = Omega(f(n)) -> C * f(n) -> lower bound on g(n) (<=)
+- less than or equal to for some constant C
+
+Big theta
+- g(n) = Theta(f(n)) -> C1 * f(n) -> Big O and C2 * f(n) -> Big omega
+
+Little o
+- g(n) = o(f(n)) -> C * f(n) -> upper bound on g(n) (>) 
+- strictly greater than for all constants C
+
+Little omega
+- g(n) = Omega(f(n)) -> C * f(n) -> lower bound on g(n) (<) 
+- strictly less than for all constants C
+
+
+Order of growth
+
+Constant O(1) or O(c)
+- always run the same despite size of problem/set
+- eg.
+    - addition of two numbers.
+
+Linear O(n)
+- runs linearly with size of set
+- eg.
+    - function that counts array size
+
+Logarithmic O(log n)
+- cuts size of set in half after each iteration
+- eg.
+    - binary search
+
+Linearithmic O(n log n)
+- eg.
+    - quick sort, merge sort
+
+Quadratic O(n^2)
+- eg.
+    - bubble sort
+
+NP Complete
+- nondeterministic polynomial time
+- polynomial time
+  - upperbounded by polynomial function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
