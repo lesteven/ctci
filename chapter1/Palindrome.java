@@ -20,7 +20,7 @@ public class Palindrome {
   }
   public static boolean isEvenPalin(char[] arr) {
     int inc = 2;
-    for (int i = 0; i < arr.length - inc; i += inc) {
+    for (int i = 0; i < arr.length - 1; i += inc) {
       if (arr[i] != arr[i+1]) {
         return false;
       }
@@ -57,6 +57,8 @@ public class Palindrome {
     System.out.println(checkPermutation("hello") + shouldBeFalse);
     System.out.println(checkPermutation("ab") + shouldBeFalse);
     System.out.println(checkPermutation("abc") + shouldBeFalse);
+    System.out.println(checkPermutation("HEEHcl") + shouldBeFalse);
+    System.out.println(checkPermutation("aaaacl") + shouldBeFalse);
   }
 }
 
