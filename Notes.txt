@@ -6,6 +6,7 @@ Asymptotic Notation
 Big O
 - g(n) = O(f(n)) -> C * f(n) -> upper bound on g(n) (>=)
 - greater than or equal to for some constant C
+
 Big omega
 - g(n) = Omega(f(n)) -> C * f(n) -> lower bound on g(n) (<=)
 - less than or equal to for some constant C
@@ -47,27 +48,55 @@ Quadratic O(n^2)
 - eg.
     - bubble sort
 
-NP Complete
-- nondeterministic polynomial time
-- polynomial time
+
+Computational Complexity Theory
+
+Deterministic
+- algorithm, when given input will always produce same output.
+- can be efficiently solved
+
+Nondeterministic
+- algorithm, when given input may not always produce same output.
+  - b/c certain conditions may affect it's decision 
+
+P (Polynomial Time)
+- can be solved in polynomial time
   - upperbounded by polynomial function
+  - n^k is polynomial time for some constant k, n is input 
+    - (upper limit?)
 
+NP (Nondeterministic polynomial time)
+- nondeterministic algorithm that takes polynomial time
+- decision problems that have efficient verifiable proof
+- exponential time
+  - k^n for some input n and constant k
 
+NP-Complete
+- no known efficient solution
 
+NP hard
+- encompasses NP-Complete
+- as hard as hardest problems in NP
 
+P vs NP
+- whether problems with solutions that can quickly be verified
+  be solved with an efficient algorithm (in polynomial time)
 
+NP-Complete examples
+- Boolean satisfiability problem (SAT)
+  - 
+- Integeter Partition
+  - 
+- Vertex cover
+  - 
+- Hamiltonian path
+  - 
 
+Recursive problems
+- Master theorem
 
-
-
-
-
-
-
-
-
-
-
+Summation
+- use when there is for or while loop
 
 
 
