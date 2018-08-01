@@ -20,5 +20,9 @@ public class MatrixRotate {
     
     int[][] expected = {{7,4,1},{8,5,2},{9,6,3}}; 
     System.out.println(Arrays.deepToString(rotated));
+    int[][] matrix2 = {{1}};
+    System.out.println(Arrays.deepToString(rotate(matrix2)));
+    int[][] matrix3 = {{1, 2}, {3, 4}};
+    System.out.println(Arrays.deepToString(rotate(matrix3)));
   }
 }
