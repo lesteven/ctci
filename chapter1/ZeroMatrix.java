@@ -40,7 +40,9 @@ public class ZeroMatrix {
     int[][] zeroed = zero(matrix);
     int[][] expected = {{0,0,0},{1,1,0}};
     int[][] matrix2 = {{1,0},{1,1},{1,1}};
+    int[][] matrix3= {{1,0,1,1},{1,1,1,1},{1,1,1,1}};
     System.out.println(Arrays.deepToString(zeroed)); 
     System.out.println(Arrays.deepToString(zero(matrix2))); 
+    System.out.println(Arrays.deepToString(zero(matrix3))); 
   }
 }
