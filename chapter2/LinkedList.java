@@ -45,33 +45,13 @@ public class LinkedList<Item> implements Iterable<Item> {
       return head.value;
     }
   }
-/*
-  public Item remove(Item item) {
-    Node node = head;
-    Item deleted = null;
-    while (node.value != item) {
-      node = node.next;
-    }
-    if (node.value == item) {
-      deleted = node.value;
-      if (node.prev != null) {
-        Node previous = node.prev;
-        Node next = node.next;
-        previous.next = next;    
-      } else {
-        head = node.next;
-      }
-    }
-    return deleted;
-  }
-*/
   public Item remove(Item item) {
     if (head.value == item) {
       return removeFromHead(item);
     } 
     Node node = head.next; 
 
-    while(node.value != item) {
+    while (node.value != item) {
       node = node.next;
     }
     if (node.value == item) {
