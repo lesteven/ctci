@@ -1,9 +1,9 @@
 
 
 public class SinglyLinkedList<Item> {
-  private class Node {
-    private Item value;
-    private Node next;
+  protected class Node {
+    public Item value;
+    public Node next;
     public Node(Item value) {
       this.value = value;
     }
@@ -23,12 +23,12 @@ public class SinglyLinkedList<Item> {
     return newNode.value;
   }  
   public Item remove(Item item) {
+    Node node = head;
     if (head.value == item) {
       Item deletedItem = node.value;
       head = node.next;
       return item;
     }
-    Node node = head;
     while (node.next != null) {
       if (node.next.value == item) {
         Item deletedItem = node.next.value;
