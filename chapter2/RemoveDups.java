@@ -3,19 +3,23 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 public class RemoveDups {
-
-  public static void removeDuplicate(LinkedList<Character> list) {
-    Map<Character, Integer>  map = new HashMap<>();
-    Iterator<Character> it = list.iterator();
-    while (it.hasNext()) {
-      char item = it.next();
-      if (map.containsKey(item)) {
-        int count = map.get(item);
-        map.put(item, count + 1);
-      } else {
-        map.put(item, 1);
+  public static Map<Character, Integer> createMap(
+    LinkedList<Character> list) {
+      Map<Character, Integer> map = new HashMap<>();
+      Iterator<Character> it = list.iterator();
+      while (it.hasNext()) {
+        char item = it.next();
+        if (map.containsKey(item)) {
+          int count = map.get(item);
+          map.put(item, count + 1);
+        } else {
+          map.put(item, 1);
+        }
       }
-    }
+    return map;
+  }
+  public static void removeDuplicate(LinkedList<Character> list) {
+    Map<Character, Integer> map = createMap(list);
     
     for (Map.Entry<Character, Integer> entry : map.entrySet()) {
       char letter = entry.getKey();
