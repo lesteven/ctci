@@ -42,10 +42,11 @@ public class SinglyLinkedList<Item> {
   public void print() {
     Node node = head;
     while (node.next != null) {
-      System.out.println(node.value);
+      System.out.print(node.value + " ");
       node = node.next;
     }
     System.out.println(node.value);
+    System.out.println("================");
   }
   public static void main(String[] args) {
     SinglyLinkedList<Integer> singly = new SinglyLinkedList<>();
