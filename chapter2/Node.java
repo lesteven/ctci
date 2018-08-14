@@ -14,7 +14,7 @@ public class Node<Item> {
   public void print(Node<Item> node ) {
     Node itnode = node;
     while (itnode.next != null) {
-      System.out.print(node.value + ", ");
+      System.out.print(itnode.value + ", ");
       itnode = itnode.next; 
     }
     System.out.println(itnode.value);

@@ -44,13 +44,13 @@ public class Intersection {
     Node<Integer> listOne = createList(arr);
     listOne.print(listOne);
     Node<Integer> listTwo= createList(arr2);
-    listOne.print(listTwo);
+    listTwo.print(listTwo);
     System.out.println(checkIntersect(listOne, listTwo));
     System.out.println(checkIntersect(listOne, listOne));
 
   }
   public static void main(String[] args) {
-    test(new int[]{4,5},new int[]{2,8,4,3});    
+    test(new int[]{4,5,6}, new int[]{2,8,4,3});    
     
   }
 }
