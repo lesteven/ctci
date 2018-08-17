@@ -1,49 +1,42 @@
 
-public class StackMin {
-  private class Node {
-    int value;
-    Node next;
-    public Node(int value) {
-      this.value = value;
-    }
-  }
-  Node head; 
-  private boolean headEmpty() {
-    return head == null;
-  }
+
+public class StackMin extends Stack {
+  Stack stackWithMin = new Stack();
+  
   public int push(int value) {
-    Node newHead = new Node(value);
-    if (!headEmpty()) {
-      newHead.next = head;
+    if (value <= minValue()) {
+      stackWithMin.push(value);
     }
-    head = newHead;
-    return newHead.value;
+    return super.push(value);
   }
   public int pop() {
-    int popped = head.value;
-    head = head.next; 
-    return popped;
-  }
-  public void print() {
-    Node node = head;
-    while (node != null) {
-      System.out.print(node.value + " ");
-      node = node.next;
+    int value = super.pop();
+    if (value == minValue()) {
+      stackWithMin.pop();
     }
-    System.out.println();
+    return value;
   }
-  public int peak() {
-    return head == null? -1: head.value;
+  public int minValue() {
+    if (stackWithMin.isEmpty()) {
+      return Integer.MAX_VALUE;
+    } 
+    return stackWithMin.peak();
   }
   public static void main(String[] args) {
-    StackMin stack = new StackMin();
-    stack.push(10);
-    stack.push(2);
-    stack.print();
-    stack.pop();
-    stack.print();
-    stack.pop();
-    stack.print();
-    System.out.println(stack.peak());
+    StackMin stackMin = new StackMin();
+    stackMin.push(5);
+    stackMin.push(10);
+    stackMin.push(2);
+    stackMin.print();
+    System.out.println(stackMin.minValue());
+    stackMin.pop(); 
+    System.out.println(stackMin.minValue());
+    stackMin.pop(); 
+    System.out.println(stackMin.minValue());
+    stackMin.pop(); 
+    System.out.println(stackMin.minValue());
+    stackMin.push(20);
+    System.out.println(stackMin.minValue());
+    
   }
 }
