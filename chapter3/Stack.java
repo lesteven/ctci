@@ -1,6 +1,6 @@
 
 public class Stack {
-  private class Node {
+  protected class Node {
     int value;
     Node next;
     public Node(int value) {
