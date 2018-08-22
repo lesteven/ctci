@@ -63,5 +63,12 @@ public class Queue<T> {
 
     q.dequeue();
     q.print();
+
+    Queue<String> q2 = new Queue<String>();
+
+    for (int i = 0; i < 10; i++) {
+      q2.enqueue("dog" + i);
+    }
+    2.print();
   }
 }
