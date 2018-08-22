@@ -16,42 +16,30 @@ public class AnimalShelter {
     return all.pollFirst();
   }
   public Animal dequeueDog() {
-    StackGen<Animal> temp = new StackGen<Animal>();
-    Animal animal = null;
-    do {
-      animal = all.removeFirst();
-      if (!(animal instanceof Dog)) {
-        temp.push(animal);
-      }
-    } while (!(animal instanceof Dog) && all.size() != 0); 
-
-    while (!temp.isEmpty()) {
-      all.addFirst(temp.pop());
-    } 
-    if (animal instanceof Dog) {
-      return animal;
-    } else {
-      return null;
-    }
+    return dequeueAnimal(Dog.class);
   }
   public Animal dequeueCat() {
+    return dequeueAnimal(Cat.class);
+  }
+  public Animal dequeueAnimal(Class c) {
     StackGen<Animal> temp = new StackGen<Animal>();
     Animal animal = null;
     do {
       animal = all.remove();
-      if (!(animal instanceof Cat)) {
+      if (!c.isInstance(animal)) {
         temp.push(animal);
       }
-    } while (!(animal instanceof Cat) && all.size() != 0); 
+    } while (!c.isInstance(animal) && all.size() != 0); 
 
     while (!temp.isEmpty()) {
       all.addFirst(temp.pop());
     } 
-    if (animal instanceof Cat) {
+    if (c.isInstance(animal)) {
       return animal;
     } else {
       return null;
     }
+
   }
   public void print() {
     System.out.println(all);
@@ -67,21 +55,22 @@ public class AnimalShelter {
       }
       shelter.enqueue(animal);
     }
+    System.out.println("starting population");
     shelter.print();
-    System.out.println(shelter.dequeueCat());
+
+    System.out.println("remove " + shelter.dequeueCat());
     shelter.print();
-    System.out.println(shelter.dequeueCat());
+    System.out.println("remove " + shelter.dequeueCat());
     shelter.print();
  
-    for (int i = 0; i < 2; i++) {
-      shelter.dequeueDog();
+    for (int i = 0; i < 4; i++) {
+      System.out.println("remove " + shelter.dequeueDog());
     } 
     shelter.print();
-
-    shelter.dequeueAny();
+    System.out.println("remove any " + shelter.dequeueAny());
     shelter.print();
 
-    shelter.dequeueAny();
+    System.out.println("remove any " + shelter.dequeueAny());
     shelter.print();
   }
 }
