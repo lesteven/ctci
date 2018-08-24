@@ -18,7 +18,7 @@ public class MinTree {
     int endIndex = pos[1];
     int parentIndex = pos[2];
     int mid = (startIndex + endIndex)/2;
-
+    System.out.println("positions " + Arrays.toString(pos)); 
     if (startIndex <= endIndex) {
       if (parentIndex != mid) {
         System.out.println("added Edge " + parentIndex + " " + mid);
