@@ -27,6 +27,9 @@ public class Graph {
   public ArrayList<Integer> getAdj(int vertex) {
     return adjList.get(vertex);
   }
+  public int getVertices() {
+    return vertices;
+  }
   public static void main(String[] args) {
     Graph graph = new Graph(5);
     graph.print();
