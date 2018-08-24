@@ -34,6 +34,7 @@ public class Route {
     Graph graph = new Graph(5);
     graph.addEdge(1,3);
     graph.print();
+/*
     for (int i = 0; i < 5; i++) {
       for (int j = 0; j < 5; j++) {
         System.out.println("vertex " + i + 
@@ -42,4 +43,27 @@ public class Route {
       }
     }
   }
+*/
+    graph.addEdge(3,4);
+/*
+    graph.print();
+    for (int i = 0; i < 5; i++) {
+      for (int j = 0; j < 5; j++) {
+        System.out.println("vertex " + i + 
+          " connected to vertex? " + j + " " 
+          + checkConnect(graph,i,j));
+      }
+    }
+*/
+    graph.addEdge(0,1);
+    graph.addEdge(0,2);
+    graph.print();
+    for (int i = 0; i < 5; i++) {
+      for (int j = 0; j < 5; j++) {
+        System.out.println("vertex " + i + 
+          " connected to vertex? " + j + " " 
+          + checkConnect(graph,i,j));
+      }
+    }
+  }    
 }
