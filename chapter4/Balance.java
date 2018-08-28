@@ -2,11 +2,14 @@
 
 public class Balance {
   public static boolean check(Node node) {
+    if (node == null) {
+      return false;
+    }
     int heightLeft = checkHeight(node.left);
     int heightRight = checkHeight(node.right);
-    System.out.println("left height: " + heightLeft);
-    System.out.println("right height: " + heightRight);
-    return heightLeft == heightRight;
+//    System.out.println("left height: " + heightLeft);
+//    System.out.println("right height: " + heightRight);
+    return Math.abs(heightLeft - heightRight) < 2;
   }
   public static Integer checkHeight(Node node) {
     if (node != null) {
@@ -32,7 +35,7 @@ public class Balance {
   
     // check one on left
     node.left = new IntNode(20);
-    System.out.println("should be false " + check(node));
+    System.out.println("should be true " + check(node));
 
     // check one on left and right
     node.right = new IntNode(50);
@@ -41,7 +44,7 @@ public class Balance {
     // check one on right
     IntNode node1 = new IntNode(4);
     node1.right = new IntNode(60);
-    System.out.println("should be false " + check(node1));
+    System.out.println("should be true " + check(node1));
 
     // check two on left and one on right
     IntNode node2 = new IntNode(2);
@@ -65,5 +68,8 @@ public class Balance {
     node3.right.left.left = new IntNode(3);
     node3.right.left.right= new IntNode(3);
     System.out.println("should be false " + check(node3));
+    
+    // check null
+    System.out.println("check null " + check(null));
   }
 }
