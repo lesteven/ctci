@@ -1,34 +1,27 @@
+import java.util.ArrayList;
 
-
-public class ValidateBST {
+public class Validate {
   public static boolean isBST(Node node) {
-    if (node == null) {
-      return false;
-    } 
-    return check(node); 
+    ArrayList<Integer> arrList = new ArrayList<>();
+    traverseTree(node, arrList);
+    return checkOrder(arrList);
   }
-  public static boolean check(Node node) {
+  private static boolean checkOrder(ArrayList<Integer> arrList) {
+    Object[] arr = arrList.toArray();
+    for (int i = 1; i < arr.length; i++) {
+      if ((int)arr[i-1] > (int)arr[i]) {
+        return false;
+      }
+    } 
+    return true;
+  }
+  private static void traverseTree(Node node, ArrayList<Integer> arrList) {
     if (node == null) {
-      return true;
+      return;  
     }
-    boolean leftBalanced = check(node.left);
-    boolean rightBalanced = check(node.right);
-    
-    if (leftBalanced && rightBalanced) { 
-      int leftNode = Integer.MIN_VALUE;
-      if (node.left != null) {
-        leftNode = (int) node.left.value;
-      }
-      int rightNode = Integer.MAX_VALUE;
-      if (node.right != null) {
-        rightNode = (int) node.right.value;
-      }
-      int currentNode = (int) node.value; 
-
-      return leftNode <= currentNode && currentNode <= rightNode; 
-    } else {
-      return false;
-    }
+    traverseTree(node.left, arrList);
+    arrList.add((int) node.value);
+    traverseTree(node.right, arrList);    
   }
   public static void main(String[] args) {
     // check null
@@ -64,7 +57,6 @@ public class ValidateBST {
     node4.right = new IntNode(500);
     System.out.println("a bunch of nodes true? : " + isBST(node4));
 
-
     // check a bunch of  nodes
     Node node5 = new IntNode(100);
     node5.left = new IntNode(200);
@@ -86,6 +78,5 @@ public class ValidateBST {
     node7.left.left = new IntNode(100);
     node7.right = new IntNode(30);
     System.out.println("out or order. false? : " + isBST(node7)); 
-  
   }
 }
