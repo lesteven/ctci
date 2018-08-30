@@ -14,6 +14,7 @@ public class DiGraph {
       adjList.add(i, new ArrayList<Integer>());
     }
   }
+  // vertex1 points to vertex2
   public void addEdge(int vertex1, int vertex2) {
     ArrayList<Integer> list1 = adjList.get(vertex1);
 
