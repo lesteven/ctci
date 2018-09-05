@@ -40,15 +40,11 @@ public class Ancestor {
 
     Node leftTree = find(root.left, one, two);
     Node rightTree = find(root.right, one, two);
-
+    
     if (leftTree != null && rightTree != null) {
       return root;
-    } else if (leftTree != null && rightTree == null) {
-      return find(root.left, one, two);
-    } else if (leftTree == null && rightTree != null) {
-      return find(root.right, one, two);
-    }
-    return null;
+    } 
+    return leftTree != null? leftTree : rightTree;
   }
   public static void main(String[] args) {
     Node root = new IntNode(10);
@@ -68,5 +64,8 @@ public class Ancestor {
     
     // check root w/ unavailable value
     System.out.println(anc.lca(root,root.left, test));
+   
+    root.left.right.right = new IntNode(12); 
+    System.out.println(anc.lca(root,root.left.left, root.left.right.right).value);
   }
 }
