@@ -31,6 +31,8 @@ public class BinarySearch {
     System.out.println("-1? " + search(list2, 12));
     System.out.println("1? " + search(list2, 4));
     System.out.println("7? " + search(list2, 4000));
+    System.out.println("-1? " + search(list2, 5000));
+    System.out.println("-1? " + search(list2, -1000));
 
   }
 }
